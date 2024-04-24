@@ -1,26 +1,47 @@
 {
-  "name": "next-entree",
+  "name": "url-extractor",
   "version": "0.1.0",
   "private": true,
+  "author": "remco stoeten",
+  "description": "Extracts urls from text and some other magic.",
+  "keywords": [
+    "Next.js",
+    "React",
+    "Tailwind CSS",
+    "Radix UI",
+    "shadcn/ui"
+  ],
+  "homepage": "https://extract.remcostoeten.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/remcostoeten/url-extracter.git"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "pnpm prettier ./src --write",
-    "format:check": "pnpm prettier ./src --check"
+    "lint:fix": "next lint --fix",
+    "typecheck": "tsc --noEmit",
+    "format:write": "prettier --write \"**/*.{ts,tsx,mdx,css}\" --cache",
+    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache"
   },
   "dependencies": {
+    "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
+    "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
     "@t3-oss/env-nextjs": "^0.9.2",
+    "@tabler/icons-react": "^3.2.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "framer-motion": "^11.1.7",
     "lucide-react": "^0.330.0",
     "next": "14.1.0",
-    "next-themes": "^0.2.1",
+    "next-themes": "^0.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "sonner": "^1.4.41",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.22.4"
