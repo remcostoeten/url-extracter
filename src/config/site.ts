@@ -1,19 +1,17 @@
 import { SiteConfig } from "@/types"
 
-import { env } from "@/env.mjs"
-
 export const siteConfig: SiteConfig = {
-  name: "Next Entree",
-  author: "redpangilinan",
+  name: "url extractor",
+  author: "remco stoeten",
   description:
-    "Next.js 14+ starter template with app router, shadcn/ui, typesafe env, icons and configs setup.",
+    'Extracts urls from text and some other magic.',
   keywords: ["Next.js", "React", "Tailwind CSS", "Radix UI", "shadcn/ui"],
   url: {
-    base: env.NEXT_PUBLIC_APP_URL,
-    author: "https://rdev.pro",
+    base: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
+    author: "https://remcostoeten.com",
   },
   links: {
-    github: "https://github.com/redpangilinan/next-entree",
+    github: "https://github.com/remcostoeten/url-extracter",
   },
-  ogImage: `${env.NEXT_PUBLIC_APP_URL}/og.jpg`,
+  ogImage: `${process.env.NEXT_PUBLIC_APP_URL}/og.jpg`,
 }
