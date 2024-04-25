@@ -4,7 +4,7 @@ import { siteConfig } from '@/core/config/site'
 import { cn } from '@core/index'
 import { AnimatePresence, motion } from 'framer-motion'
 
-import { ModeToggle } from '../mode-toggle'
+import { ModeToggle } from '../effects/mode-toggle'
 import ShinyButton from '../ui/shiny-button'
 
 export const FloatingNav = ({

@@ -1,3 +1,3 @@
 export default function Layout({ children }) {
-    return <div className="bg-dark text-zinc-200 pt-8 mt-8">{ children }</div>
+    return <div className="mt-8 bg-dark pt-8 text-zinc-200">{children}</div>
 }

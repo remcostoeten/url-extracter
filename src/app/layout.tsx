@@ -82,7 +82,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     disableTransitionOnChange
                 >
                     <BackgroundWrapper>
-                        <Navbar />
+                        {/* <Navbar /> */}
                         {children}
                     </BackgroundWrapper>
                 </ThemeProvider>
