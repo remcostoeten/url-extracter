@@ -3,7 +3,6 @@
 import { SelectContent, SelectItem, SelectValue } from '@radix-ui/react-select'
 
 import {
-    Badge,
     Button,
     Input,
     Label,
@@ -190,6 +189,7 @@ export function ToolShell() {
                         </form>
                     </DrawerContent>
                 </Drawer>
+                {/* // ToDO add share functionallity */}
                 <Button
                     className="ml-auto gap-1.5 text-sm"
                     size="sm"
@@ -198,8 +198,9 @@ export function ToolShell() {
                     <ShareIcon className="size-3.5" />
                     Share
                 </Button>
+                {/* end // ToDO  add share functionallity */}
                 <main className="grid flex-1 gap-4 overflow-auto p-4 md:grid-cols-2 lg:grid-cols-3">
-                    <div
+                    <aside
                         className="relative hidden flex-col items-start gap-8 md:flex"
                         x-chunk="dashboard-03-chunk-0"
                     >
@@ -246,8 +247,8 @@ export function ToolShell() {
                                 </div>
                             </fieldset>
                         </form>
-                    </div>
-                    <div className="relative flex h-[1005px] min-h-[70vh] flex-col rounded-xl bg-muted/50 p-4 lg:col-span-2">
+                    </aside>
+                    <main className="relative flex h-[1005px] min-h-[70vh] flex-col rounded-xl bg-muted/50 p-4 lg:col-span-2">
                         <div className="flex items-center justify-between">
                             <Button
                                 className="absolute right-8 top-8 z-10 ml-auto gap-1.5 text-sm"
@@ -308,7 +309,7 @@ export function ToolShell() {
                                 </TooltipProvider>
                             </div>
                         </form>
-                    </div>
+                    </main>
                 </main>
             </ToolHeader>
         </>
