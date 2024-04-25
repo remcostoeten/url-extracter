@@ -27,286 +27,291 @@ import ToolHeader from './ToolHeader'
 
 export function ToolShell() {
     return (
-        <><ToolHeader title="Text Transformer">
-            <Drawer>
-                <DrawerTrigger asChild>
-                    <Button
-                        className="md:hidden"
-                        size="icon"
-                        variant="ghost"
-                    >
-                        <SettingsIcon className="size-4" />
-                        <span className="sr-only">Settings</span>
-                    </Button>
-                </DrawerTrigger>
-                <DrawerContent className="max-h-[80vh]">
-                    <DrawerHeader>
-                        <DrawerTitle>Configuration</DrawerTitle>
-                        <DrawerDescription>
-                            Configure the settings for the model and
-                            messages.
-                        </DrawerDescription>
-                    </DrawerHeader>
-                    <form className="grid w-full items-start gap-6 overflow-auto p-4 pt-0">
-                        <fieldset className="grid gap-6 rounded-lg border p-4">
-                            <legend className="-ml-1 px-1 text-sm font-medium">
-                                Settings
-                            </legend>
-                            <div className="grid gap-3">
-                                <Label>Model</Label>
-                                <Select>
-                                    <SelectTrigger
-                                        className="items-start [&_[data-description]]:hidden"
-                                        id="model"
-                                    >
-                                        <SelectValue placeholder="Select a model" />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        <SelectItem value="genesis">
-                                            <div className="flex items-start gap-3 text-muted-foreground">
-                                                <RabbitIcon className="size-5" />
-                                                <div className="grid gap-0.5">
-                                                    <p>
-                                                        Neural
-                                                        <span className="font-medium text-foreground">
-                                                            Genesis
-                                                        </span>
-                                                    </p>
-                                                    <p
-                                                        className="text-xs"
-                                                        data-description
-                                                    >
-                                                        Our fastest
-                                                        model for
-                                                        general use
-                                                        cases.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </SelectItem>
-                                        <SelectItem value="explorer">
-                                            <div className="flex items-start gap-3 text-muted-foreground">
-                                                <BirdIcon className="size-5" />
-                                                <div className="grid gap-0.5">
-                                                    <p>
-                                                        Neural
-                                                        <span className="font-medium text-foreground">
-                                                            Explorer
-                                                        </span>
-                                                    </p>
-                                                    <p
-                                                        className="text-xs"
-                                                        data-description
-                                                    >
-                                                        Performance and
-                                                        speed for
-                                                        efficiency.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </SelectItem>
-                                        <SelectItem value="quantum">
-                                            <div className="flex items-start gap-3 text-muted-foreground">
-                                                <TurtleIcon className="size-5" />
-                                                <div className="grid gap-0.5">
-                                                    <p>
-                                                        Neural
-                                                        <span className="font-medium text-foreground">
-                                                            Quantum
-                                                        </span>
-                                                    </p>
-                                                    <p
-                                                        className="text-xs"
-                                                        data-description
-                                                    >
-                                                        The most
-                                                        powerful model
-                                                        for complex
-                                                        computations.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </SelectItem>
-                                    </SelectContent>
-                                </Select>
-                            </div>
-                            <div className="grid gap-3">
-                                <label htmlFor="temperature">
-                                    Temperature
-                                </label>
-                                <Input
-                                    id="temperature"
-                                    placeholder="0.4"
-                                    type="number" />
-                            </div>
-                            <div className="grid gap-3">
-                                <label htmlFor="top-p">Top P</label>
-                                <Input
-                                    id="top-p"
-                                    placeholder="0.7"
-                                    type="number" />
-                            </div>
-                            <div className="grid gap-3">
-                                <label htmlFor="top-k">Top K</label>
-                                <Input
-                                    id="top-k"
-                                    placeholder="0.0"
-                                    type="number" />
-                            </div>
-                        </fieldset>
-                        <fieldset className="grid gap-6 rounded-lg border p-4">
-                            <legend className="-ml-1 px-1 text-sm font-medium">
-                                Messages
-                            </legend>
-                            <div className="grid gap-3">
-                                <label htmlFor="role">Role</label>
-                                <Select defaultValue="system">
-                                    <SelectTrigger>
-                                        <SelectValue placeholder="Select a role" />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        <SelectItem value="system">
-                                            System
-                                        </SelectItem>
-                                        <SelectItem value="user">
-                                            User
-                                        </SelectItem>
-                                        <SelectItem value="assistant">
-                                            Assistant
-                                        </SelectItem>
-                                    </SelectContent>
-                                </Select>
-                            </div>
-                            <div className="grid gap-3">
-                                <Label htmlFor="content">Content</Label>
-                                <Textarea
-                                    id="content"
-                                    placeholder="You are a..." />
-                            </div>
-                        </fieldset>
-                    </form>
-                </DrawerContent>
-            </Drawer>
-            <Button
-                className="ml-auto gap-1.5 text-sm"
-                size="sm"
-                variant="outline"
-            >
-                <ShareIcon className="size-3.5" />
-                Share
-            </Button>
-        <main className="grid flex-1 gap-4 overflow-auto p-4 md:grid-cols-2 lg:grid-cols-3">
-                <div
-                    className="relative hidden flex-col items-start gap-8 md:flex"
-                    x-chunk="dashboard-03-chunk-0"
-                >
-                    <form className="grid w-full items-start gap-6">
-                        <fieldset className="grid gap-6 rounded-lg border p-4">
-                            <legend className="-ml-1 px-1 text-sm font-medium">
-                                Text Transformer
-                            </legend>
-                            <div className="grid gap-3">
-                                <Label>                                        Input Text
-                                </Label>
-                                <Textarea
-                                    className="min-h-[150px]"
-                                    id="text-input"
-                                    placeholder="Paste your text here..." />
-                                <div className="flex items-center gap-2">
-                                    <CopyIcon className="size-4" />
-                                    <Input
-                                        className="w-16"
-                                        defaultValue="1"
-                                        max="10"
-                                        min="1"
-                                        type="number" />
-                                    <span>Number of URLs to copy:</span>
-                                </div>
-                            </div>
-                            <div className="grid gap-3">
-                                <Label>
-                                    Enter any character that the line should
-                                    contain that you want to
-                                    <strong>_keep_</strong>
-                                </Label>
-                                <Input
-                                    id="keep-string"
-                                    placeholder="Enter character" />
-                            </div>
-                            <div className="grid grid-cols-2 gap-4">
-                                <Button>Remove all except URLs</Button>
-                                <Button>
-                                    Remove all lines except with character
-                                </Button>
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
-                <div className="relative flex h-[1005px] min-h-[70vh] flex-col rounded-xl bg-muted/50 p-4 lg:col-span-2">
-                    <div className="flex items-center justify-between">
+        <>
+            <ToolHeader title="Text Transformer">
+                <Drawer>
+                    <DrawerTrigger asChild>
                         <Button
-                            className="ml-auto absolute right-8 top-8 z-10 gap-1.5 text-sm"
+                            className="md:hidden"
                             size="icon"
-                            variant="outline"
+                            variant="ghost"
                         >
-                            <CopyIcon className="size-3.5" />
+                            <SettingsIcon className="size-4" />
+                            <span className="sr-only">Settings</span>
                         </Button>
-                    </div>
-                    <div className="flex-1" />
-                    <form
-                        className="relative overflow-hidden rounded-lg border bg-background focus-within:ring-1 focus-within:ring-ring"
-                        x-chunk="dashboard-03-chunk-1"
+                    </DrawerTrigger>
+                    <DrawerContent className="max-h-[80vh]">
+                        <DrawerHeader>
+                            <DrawerTitle>Configuration</DrawerTitle>
+                            <DrawerDescription>
+                                Configure the settings for the model and
+                                messages.
+                            </DrawerDescription>
+                        </DrawerHeader>
+                        <form className="grid w-full items-start gap-6 overflow-auto p-4 pt-0">
+                            <fieldset className="grid gap-6 rounded-lg border p-4">
+                                <legend className="-ml-1 px-1 text-sm font-medium">
+                                    Settings
+                                </legend>
+                                <div className="grid gap-3">
+                                    <Label>Model</Label>
+                                    <Select>
+                                        <SelectTrigger
+                                            className="items-start [&_[data-description]]:hidden"
+                                            id="model"
+                                        >
+                                            <SelectValue placeholder="Select a model" />
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectItem value="genesis">
+                                                <div className="flex items-start gap-3 text-muted-foreground">
+                                                    <RabbitIcon className="size-5" />
+                                                    <div className="grid gap-0.5">
+                                                        <p>
+                                                            Neural
+                                                            <span className="font-medium text-foreground">
+                                                                Genesis
+                                                            </span>
+                                                        </p>
+                                                        <p
+                                                            className="text-xs"
+                                                            data-description
+                                                        >
+                                                            Our fastest model
+                                                            for general use
+                                                            cases.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </SelectItem>
+                                            <SelectItem value="explorer">
+                                                <div className="flex items-start gap-3 text-muted-foreground">
+                                                    <BirdIcon className="size-5" />
+                                                    <div className="grid gap-0.5">
+                                                        <p>
+                                                            Neural
+                                                            <span className="font-medium text-foreground">
+                                                                Explorer
+                                                            </span>
+                                                        </p>
+                                                        <p
+                                                            className="text-xs"
+                                                            data-description
+                                                        >
+                                                            Performance and
+                                                            speed for
+                                                            efficiency.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </SelectItem>
+                                            <SelectItem value="quantum">
+                                                <div className="flex items-start gap-3 text-muted-foreground">
+                                                    <TurtleIcon className="size-5" />
+                                                    <div className="grid gap-0.5">
+                                                        <p>
+                                                            Neural
+                                                            <span className="font-medium text-foreground">
+                                                                Quantum
+                                                            </span>
+                                                        </p>
+                                                        <p
+                                                            className="text-xs"
+                                                            data-description
+                                                        >
+                                                            The most powerful
+                                                            model for complex
+                                                            computations.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                </div>
+                                <div className="grid gap-3">
+                                    <label htmlFor="temperature">
+                                        Temperature
+                                    </label>
+                                    <Input
+                                        id="temperature"
+                                        placeholder="0.4"
+                                        type="number"
+                                    />
+                                </div>
+                                <div className="grid gap-3">
+                                    <label htmlFor="top-p">Top P</label>
+                                    <Input
+                                        id="top-p"
+                                        placeholder="0.7"
+                                        type="number"
+                                    />
+                                </div>
+                                <div className="grid gap-3">
+                                    <label htmlFor="top-k">Top K</label>
+                                    <Input
+                                        id="top-k"
+                                        placeholder="0.0"
+                                        type="number"
+                                    />
+                                </div>
+                            </fieldset>
+                            <fieldset className="grid gap-6 rounded-lg border p-4">
+                                <legend className="-ml-1 px-1 text-sm font-medium">
+                                    Messages
+                                </legend>
+                                <div className="grid gap-3">
+                                    <label htmlFor="role">Role</label>
+                                    <Select defaultValue="system">
+                                        <SelectTrigger>
+                                            <SelectValue placeholder="Select a role" />
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectItem value="system">
+                                                System
+                                            </SelectItem>
+                                            <SelectItem value="user">
+                                                User
+                                            </SelectItem>
+                                            <SelectItem value="assistant">
+                                                Assistant
+                                            </SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                </div>
+                                <div className="grid gap-3">
+                                    <Label htmlFor="content">Content</Label>
+                                    <Textarea
+                                        id="content"
+                                        placeholder="You are a..."
+                                    />
+                                </div>
+                            </fieldset>
+                        </form>
+                    </DrawerContent>
+                </Drawer>
+                <Button
+                    className="ml-auto gap-1.5 text-sm"
+                    size="sm"
+                    variant="outline"
+                >
+                    <ShareIcon className="size-3.5" />
+                    Share
+                </Button>
+                <main className="grid flex-1 gap-4 overflow-auto p-4 md:grid-cols-2 lg:grid-cols-3">
+                    <div
+                        className="relative hidden flex-col items-start gap-8 md:flex"
+                        x-chunk="dashboard-03-chunk-0"
                     >
-                        <Label className="sr-only">
-                            Message
-                        </Label>
-                        <Textarea
-                            className="h-full resize-none border-0 p-3 shadow-none focus-visible:ring-0"
-                            id="message"
-                            disabled
-                            placeholder="Extracted text will go here..." />
-                        <div className="flex items-center p-3 pt-0">
-                            <TooltipProvider>
-                                <Tooltip>
-                                    <TooltipTrigger asChild>
-                                        <Button size="icon" variant="ghost">
-                                            <PaperclipIcon className="size-4" />
-                                            <span className="sr-only">
-                                                Attach file
-                                            </span>
-                                        </Button>
-                                    </TooltipTrigger>
-                                    <TooltipContent side="top">
-                                        Attach File
-                                    </TooltipContent>
-                                </Tooltip>
-                                <Tooltip>
-                                    <TooltipTrigger asChild>
-                                        <Button size="icon" variant="ghost">
-                                            <MicIcon className="size-4" />
-                                            <span className="sr-only">
-                                                Use Microphone
-                                            </span>
-                                        </Button>
-                                    </TooltipTrigger>
-                                    <TooltipContent side="top">
-                                        Use Microphone
-                                    </TooltipContent>
-                                </Tooltip>
-                                <Button
-                                    className="ml-auto gap-1.5"
-                                    size="sm"
-                                    type="submit"
-                                >
-                                    Send Message
-                                    <CornerDownLeftIcon className="size-3.5" />
-                                </Button>
-                            </TooltipProvider>
+                        <form className="grid w-full items-start gap-6">
+                            <fieldset className="grid gap-6 rounded-lg border p-4">
+                                <legend className="-ml-1 px-1 text-sm font-medium">
+                                    Text Transformer
+                                </legend>
+                                <div className="grid gap-3">
+                                    <Label> Input Text</Label>
+                                    <Textarea
+                                        className="min-h-[150px]"
+                                        id="text-input"
+                                        placeholder="Paste your text here..."
+                                    />
+                                    <div className="flex items-center gap-2">
+                                        <CopyIcon className="size-4" />
+                                        <Input
+                                            className="w-16"
+                                            defaultValue="1"
+                                            max="10"
+                                            min="1"
+                                            type="number"
+                                        />
+                                        <span>Number of URLs to copy:</span>
+                                    </div>
+                                </div>
+                                <div className="grid gap-3">
+                                    <Label>
+                                        Enter any character that the line should
+                                        contain that you want to
+                                        <strong>_keep_</strong>
+                                    </Label>
+                                    <Input
+                                        id="keep-string"
+                                        placeholder="Enter character"
+                                    />
+                                </div>
+                                <div className="grid grid-cols-2 gap-4">
+                                    <Button>Remove all except URLs</Button>
+                                    <Button>
+                                        Remove all lines except with character
+                                    </Button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div className="relative flex h-[1005px] min-h-[70vh] flex-col rounded-xl bg-muted/50 p-4 lg:col-span-2">
+                        <div className="flex items-center justify-between">
+                            <Button
+                                className="absolute right-8 top-8 z-10 ml-auto gap-1.5 text-sm"
+                                size="icon"
+                                variant="outline"
+                            >
+                                <CopyIcon className="size-3.5" />
+                            </Button>
                         </div>
-                    </form>
-                </div>
-            </main>
-        </ToolHeader></>
+                        <div className="flex-1" />
+                        <form
+                            className="relative overflow-hidden rounded-lg border bg-background focus-within:ring-1 focus-within:ring-ring"
+                            x-chunk="dashboard-03-chunk-1"
+                        >
+                            <Label className="sr-only">Message</Label>
+                            <Textarea
+                                className="h-full resize-none border-0 p-3 shadow-none focus-visible:ring-0"
+                                id="message"
+                                disabled
+                                placeholder="Extracted text will go here..."
+                            />
+                            <div className="flex items-center p-3 pt-0">
+                                <TooltipProvider>
+                                    <Tooltip>
+                                        <TooltipTrigger asChild>
+                                            <Button size="icon" variant="ghost">
+                                                <PaperclipIcon className="size-4" />
+                                                <span className="sr-only">
+                                                    Attach file
+                                                </span>
+                                            </Button>
+                                        </TooltipTrigger>
+                                        <TooltipContent side="top">
+                                            Attach File
+                                        </TooltipContent>
+                                    </Tooltip>
+                                    <Tooltip>
+                                        <TooltipTrigger asChild>
+                                            <Button size="icon" variant="ghost">
+                                                <MicIcon className="size-4" />
+                                                <span className="sr-only">
+                                                    Use Microphone
+                                                </span>
+                                            </Button>
+                                        </TooltipTrigger>
+                                        <TooltipContent side="top">
+                                            Use Microphone
+                                        </TooltipContent>
+                                    </Tooltip>
+                                    <Button
+                                        className="ml-auto gap-1.5"
+                                        size="sm"
+                                        type="submit"
+                                    >
+                                        Send Message
+                                        <CornerDownLeftIcon className="size-3.5" />
+                                    </Button>
+                                </TooltipProvider>
+                            </div>
+                        </form>
+                    </div>
+                </main>
+            </ToolHeader>
+        </>
     )
 }
 
