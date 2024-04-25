@@ -1,9 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
+import { siteConfig } from '@/core/config/site'
 import { cn } from '@core/index'
 import { AnimatePresence, motion } from 'framer-motion'
-
-import { siteConfig } from '@/config/site'
 
 import { ModeToggle } from '../mode-toggle'
 import ShinyButton from '../ui/shiny-button'

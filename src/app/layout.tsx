@@ -2,9 +2,9 @@ import '@/styles/globals.css'
 
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
+import { siteConfig } from '@/core/config/site'
 import { cn } from '@/core/lib/utils'
 
-import { siteConfig } from '@/config/site'
 import { ThemeProvider } from '@/components/theme-provider'
 import BackgroundWrapper from '@/components/theme/BackgroundWrapper'
 import Navbar from '@/components/theme/navbar'

@@ -1,7 +1,7 @@
 import Link from 'next/link'
+import { siteConfig } from '@/core/config/site'
 import { cn } from '@/core/lib/utils'
 
-import { siteConfig } from '@/config/site'
 import { buttonVariants } from '@/components/ui/button'
 import { Icons } from '@/components/icons'
 import { ModeToggle } from '@/components/mode-toggle'
