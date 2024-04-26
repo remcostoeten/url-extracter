@@ -11,14 +11,17 @@ import {
     TooltipTrigger,
 } from '../ui'
 
-const MessageForm = () => {
+const MessageForm = ({ processedText }) => {
+    console.log(processedText)
+    console.log('processedText')
+
     return (
         <form className="relative h-screen overflow-hidden rounded-lg border bg-background focus-within:ring-1 focus-within:ring-ring">
             <Label className="sr-only">Message</Label>
             <Textarea
                 className="h-[92%] resize-none border-0 p-3 shadow-none focus-visible:ring-0"
                 id="message"
-                disabled
+                value={processedText}
                 placeholder="Extracted text will go here..."
             />
             <div className="flex items-center p-3 pt-0">
