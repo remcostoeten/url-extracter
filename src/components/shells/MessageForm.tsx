@@ -13,10 +13,10 @@ import {
 
 const MessageForm = () => {
     return (
-        <form className="relative overflow-hidden rounded-lg border bg-background focus-within:ring-1 focus-within:ring-ring">
+        <form className="relative h-screen overflow-hidden rounded-lg border bg-background focus-within:ring-1 focus-within:ring-ring">
             <Label className="sr-only">Message</Label>
             <Textarea
-                className="h-full resize-none border-0 p-3 shadow-none focus-visible:ring-0"
+                className="h-[92%] resize-none border-0 p-3 shadow-none focus-visible:ring-0"
                 id="message"
                 disabled
                 placeholder="Extracted text will go here..."

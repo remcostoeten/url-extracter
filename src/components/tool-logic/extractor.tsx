@@ -164,7 +164,7 @@ export default function MyComponent() {
             <div className="relative mt-8 flex flex-col md:flex-row">
                 <span className="text-green-400">{'~/chars-keep'}</span>
                 <p className="typing text-offgrey flex-1 items-center pl-2">
-                    Enter any character that the line should{' '}
+                    w character that the line should{' '}
                     <strong>
                         <u>{keepContaining ? 'contain' : 'not contain'}</u>
                     </strong>{' '}

@@ -1,12 +1,11 @@
 import React from 'react'
 
-export default function FormIntroShell({
-    title,
-    children,
-}: {
-    title: string
-    children: React.ReactNode
-}) {
+type FormIntroProps = {
+    title?: string
+    children?: React.ReactNode
+}
+
+export default function FormIntroShell({ title, children }: FormIntroProps) {
     return (
         <>
             <form className="grid w-full items-start gap-6">
