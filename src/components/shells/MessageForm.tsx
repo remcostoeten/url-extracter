@@ -28,7 +28,7 @@ const MessageForm = ({ processedText }) => {
                 <TooltipProvider>
                     <Tooltip>
                         <TooltipTrigger asChild>
-                            <Button size="icon" variant="ghost">
+                            <Button size="icon-xs" variant="ghost">
                                 <PaperclipIcon className="size-4" />
                                 <span className="sr-only">Attach file</span>
                             </Button>
@@ -37,7 +37,7 @@ const MessageForm = ({ processedText }) => {
                     </Tooltip>
                     <Tooltip>
                         <TooltipTrigger asChild>
-                            <Button size="icon" variant="ghost">
+                            <Button size="icon-xs" variant="ghost">
                                 <MicIcon className="size-4" />
                                 <span className="sr-only">Use Microphone</span>
                             </Button>

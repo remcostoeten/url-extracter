@@ -17,10 +17,11 @@
     "url": "https://github.com/remcostoeten/url-extracter.git"
   },
   "scripts": {
-    "dev": "pnpm run postinstall ; next dev --turbo",
+    "dev": "pnpm run postinstall ; next dev --turbo && open http://localhost:3000",
+    "dev-classic": "pnpm run postinstall ; next dev --turbo",
     "dev0": "next dev --turbo --port 0000",
-    "build": "pnpm run postinstall  && next build",
-    "buildfull": "prettier --write \"**/*.{*tail*.js*,ts,tsx,mdx,css}\" --cache && eslint --fix . && next build",
+    "analyze": "ANALYZE=true pnpm build",
+    "build": "prettier --write \"**/*.{*tail*.js*,ts,tsx,mdx,css}\" --cache && eslint --fix . && next build",
     "start": "next start",
     "lint:fix": "eslint --fix . --config ./.eslintrc.json",
     "eslintfix": "eslint --fix . --config ./.eslintrc.json",
@@ -28,10 +29,10 @@
     "typecheck": "tsc --noEmit",
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx,css}\" --cache",
     "format:check": "prettier --check \"**/*.{json,ts,tsx,mdx}\" --cache",
-    "check": "npm run lint:check && npm run format:check",
     "postinstall": "node @/core/scripts/replace-utils0 && bash ./scripts/replace-utils-path-w-core.sh"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^14.2.3",
     "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
@@ -67,6 +68,7 @@
     "autoprefixer": "^10.4.17",
     "eslint": "^8.56.0",
     "eslint-config-next": "14.1.0",
+    "open": "^10.1.0",
     "postcss": "^8.4.35",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
