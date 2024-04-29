@@ -29,7 +29,7 @@
     "typecheck": "tsc --noEmit",
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx,css}\" --cache",
     "format:check": "prettier --check \"**/*.{json,ts,tsx,mdx}\" --cache",
-    "postinstall": "node @/core/scripts/replace-utils0 && bash ./scripts/replace-utils-path-w-core.sh"
+    "postinstallL": "node @/core/scripts/replace-utils0 && bash ./scripts/replace-utils-path-w-core.sh"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^14.2.3",
