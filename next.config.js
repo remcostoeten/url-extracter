@@ -1,5 +1,6 @@
 const million = require('million/compiler')
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {}
 
 const millionConfig = {
@@ -9,4 +10,8 @@ const millionConfig = {
     },
 }
 
-module.exports = million.next(nextConfig, millionConfig)
+const withBundleAnalyzer = require('@next/bundle-analyzer')()
+
+module.exports = process.env.ANALYZE === 'true'
+    ? withBundleAnalyzer(million.next(nextConfig, millionConfig))
+    : million.next(nextConfig, millionConfig)

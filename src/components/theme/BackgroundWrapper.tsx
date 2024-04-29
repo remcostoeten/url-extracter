@@ -19,7 +19,7 @@ export default function BackgroundWrapper({
                     duration: 0.8,
                     ease: 'easeInOut',
                 }}
-                className="relative flex flex-col items-center justify-center gap-4 px-4"
+                className="relative flex flex-col items-center justify-center gap-4"
             >
                 {children}
             </motion.div>
