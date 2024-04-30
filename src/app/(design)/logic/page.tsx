@@ -1,4 +1,3 @@
-
 import { ModeToggle } from '@/components/effects/mode-toggle'
 import Dashboard from '@/components/shells/Dashboard'
 

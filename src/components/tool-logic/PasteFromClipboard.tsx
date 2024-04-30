@@ -3,9 +3,9 @@
 import { useState } from 'react'
 import { ClipboardPasteIcon } from 'lucide-react'
 import { toast } from 'sonner'
-import removeNonURLs from './RemoveNonUrl'
 
 import { Button, Tooltip, TooltipProvider, TooltipTrigger } from '../ui'
+import removeNonURLs from './RemoveNonUrl'
 
 export default function PasteFromClipboard({
     targetId,
@@ -17,18 +17,18 @@ export default function PasteFromClipboard({
     const [clipboardData, setClipboardData] = useState('')
 
     const handlePaste = async (event) => {
-        event.preventDefault();
+        event.preventDefault()
         try {
-            const text = await navigator.clipboard.readText();
-            setClipboardData(text);
-            const newText = removeNonURLs(text);
-            setClipboardData(newText);
-            toast('Clipboard contents pasted successfully!');
+            const text = await navigator.clipboard.readText()
+            setClipboardData(text)
+            const newText = removeNonURLs(text)
+            setClipboardData(newText)
+            toast('Clipboard contents pasted successfully!')
         } catch (err) {
-            console.error('Failed to read clipboard contents: ', err);
-            toast('Failed to read clipboard contents.');
+            console.error('Failed to read clipboard contents: ', err)
+            toast('Failed to read clipboard contents.')
         }
-    };
+    }
 
     return (
         <TooltipProvider>
